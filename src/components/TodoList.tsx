@@ -10,9 +10,9 @@ const TodoList : React.FC<TodosProps> = props => {
     return (
         <ul>
             {props.items.map(todo => (
-                <li key={todo.id}>{todo.text}
+                <li key={todo.id}>
                 <span>{todo.text}</span>
-                <button onClick={props.onDeleteTodo.bind(null, todo.id)}>DELETER</button>
+                <button onClick={props.onDeleteTodo.bind(null, todo.id)}>DELETE</button>
                 </li>
             ))}
         </ul>

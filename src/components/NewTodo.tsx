@@ -1,4 +1,5 @@
-import React, {useRef} from 'react'
+import React, {useRef} from 'react';
+import '../css/new.css'
 
 type NewTodoProps = {
     onAddTodo: (todoText:string)=> void;
@@ -6,7 +7,7 @@ type NewTodoProps = {
 
 
 const NewTodo:React.FC<NewTodoProps> =  props => {
-    const textInputRef = useRef<HTMLInputElement>(null);
+    const textInputRef = useRef<HTMLTextAreaElement>(null);
 
     const todoSubmitHandler = (event: React.FormEvent) => {
         event.preventDefault();
@@ -15,11 +16,11 @@ const NewTodo:React.FC<NewTodoProps> =  props => {
     }
     return (
         <form onSubmit={todoSubmitHandler}>
-            <div>
-                <label htmlFor="todo-text">Todo Text</label>
-                <input type="text" id='todo-text' ref={textInputRef} />
+            <div className='form-container'>
+                <label className='label' htmlFor="todo-text">Todo Text</label>
+                <textarea id='todo-text' ref={textInputRef} />
             </div>
-            <button type='submit'>Add Todo</button>
+            <button className='submitButton' type='submit'>Add Todo</button>
         </form>
     )
 }
